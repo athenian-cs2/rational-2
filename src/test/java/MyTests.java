@@ -53,16 +53,16 @@ public class MyTests {
     }
 
     @Test
-    public void testRound() {
-        Rational r = new Rational(19,8);
-        r.round();
-        assertEquals("2/1", r.toString(), "Rounding 19/8 should give the result: 2/1");
-        Rational s = new Rational(4,10);
-        s.round();
-        assertEquals("0/1", s.toString(), "Rounding 4/10 should give the result: 0/1");
-        Rational t = new Rational(5,10);
-        t.round();
-        assertEquals("1/1", t.toString(), "Rounding 5/10 should give the result: 1/1");
+    public void testChangeToEquivalentFraction() {
+        Rational r = new Rational(3,8);
+        r.changeToEquivalentFraction(64);
+        assertEquals("24/64", r.toString(), "The equivalent fraction of 3/8 with the base 64 is: 24/64");
+        Rational s = new Rational(1,2);
+        s.changeToEquivalentFraction(100);
+        assertEquals("50/100", s.toString(), "The equivalent fraction of 1/2 with the base 100 is: 50/100");
+        Rational t = new Rational(16,8);
+        t.changeToEquivalentFraction(4);
+        assertEquals("8/4", t.toString(), "The equivalent fraction of 16/8 with the base 4 is: 16/4");
     }
 
     // Homework Methods
@@ -89,15 +89,15 @@ public class MyTests {
     }
 
     @Test
-    public void testChangeToEquivalentFraction() {
-        Rational r = new Rational(3,8);
-        r.changeToEquivalentFraction(64);
-        assertEquals("24/64", r.toString(), "The equivalent fraction of 3/8 with the base 64 is: 24/64");
-        Rational s = new Rational(1,2);
-        s.changeToEquivalentFraction(100);
-        assertEquals("50/100", s.toString(), "The equivalent fraction of 1/2 with the base 100 is: 50/100");
-        Rational t = new Rational(16,8);
-        t.changeToEquivalentFraction(4);
-        assertEquals("8/4", t.toString(), "The equivalent fraction of 16/8 with the base 4 is: 16/4");
+    public void testRound() {
+        Rational r = new Rational(19,8);
+        r.round();
+        assertEquals("2/1", r.toString(), "Rounding 19/8 should give the result: 2/1");
+        Rational s = new Rational(4,10);
+        s.round();
+        assertEquals("0/1", s.toString(), "Rounding 4/10 should give the result: 0/1");
+        Rational t = new Rational(5,10);
+        t.round();
+        assertEquals("1/1", t.toString(), "Rounding 5/10 should give the result: 1/1");
     }
 }

@@ -147,11 +147,12 @@ public class Rational
         // YOUR CODE HERE
     }
 
-    // Rounds the current Rational to the nearest whole number value
-    // Example:
-    // Rational r = new Rational(3, 2);
-    // r.round(); // r is now 2/1
-    public void round() {
+    // Given an int input representing the new denominator, changes the
+    // current Rational to an equivalent fraction with that new denominator
+    // You can assume that the numerator will always end up as a whole number
+    // Rational r = new Rational(3, 8);
+    // r.changeToEquivalentFraction(64); // r is now 24/64 (which is equivalent to 3/8)
+    public void changeToEquivalentFraction(int newDenominator) {
         // YOUR CODE HERE
     }
 
@@ -184,12 +185,11 @@ public class Rational
         return false; // YOUR CODE HERE
     }
 
-    // Given an int input representing the new denominator, changes the
-    // current Rational to an equivalent fraction with that new denominator
-    // You can assume that the numerator will always end up as a whole number
-    // Rational r = new Rational(3, 8);
-    // r.changeToEquivalentFraction(64); // r is now 24/64 (which is equivalent to 3/8)
-    public void changeToEquivalentFraction(int newDenominator) {
+    // Rounds the current Rational to the nearest whole number value
+    // Example:
+    // Rational r = new Rational(3, 2);
+    // r.round(); // r is now 2/1
+    public void round() {
         // YOUR CODE HERE
     }
 }
