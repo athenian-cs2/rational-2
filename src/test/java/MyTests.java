@@ -4,6 +4,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MyTests {
     @Test
+    public void testIsSimplified() {
+        assertEquals(true, new Rational(1,2).isSimplified(), "The output of checking if the Rational 1/2 is simplified should be: true");
+        assertEquals(true, new Rational(2,3).isSimplified(), "The output of checking if the Rational 2/3 is simplified should be: true");
+        assertEquals(false, new Rational(2,4).isSimplified(), "The output of checking if the Rational 2/4 is simplified should be: false");
+        assertEquals(false, new Rational(4,2).isSimplified(), "The output of checking if the Rational 4/2 is simplified should be: false");
+    }
+
+    @Test
     public void testCalculateDoubleValue() {
         assertEquals(1.5, new Rational(3,2).calculateDecimalValue(), 0.01, "The output of calculating the double value of the Rational 3/2 is simplified should be: 1.5");
         assertEquals(0.25, new Rational(1,4).calculateDecimalValue(), 0.01, "The output of calculating the double value of the Rational 1/4 is simplified should be: 0.25");
