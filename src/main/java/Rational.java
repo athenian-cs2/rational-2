@@ -14,19 +14,22 @@ public class Rational {
   }
 
   // *****
-  // You should go ahead and copy and paste the methods
-  // from last class into here:
+  // In the last assignment, we had a RationalUtil class that let us manipulate Rational numbers.
+  // Today, instead, we'll be adding functionality to the Rational class itself!
   // *****
 
-  // *****
-  // Here are all of our NON-STATIC methods:
-  // *****
+  // Example function. This simplifies the Rational itself, instead of producing a separate Rational.
+  public void simplify() {
+    // Find the greatest common factor of the numerator and denominator.
+    // Note: if it is 1, the Rational is already simplified and the below
+    // have no effect.
+    int commonFactor = gcf(numerator, denominator);
+    numerator /= commonFactor;
+    denominator /= commonFactor;
+  }
 
-  // Returns whether or not the numerator is greater than or equal
-  // to the denominator
-  // Example:
-  // Rational r = new Rational(5,2);
-  // System.out.println(r.isImproper()) // true
+  // Another example. Returns whether or not the numerator is greater than or equal
+  // to the denominator, making the Rational "improper".
   public boolean isImproper() {
     return (this.numerator >= this.denominator);
   }
@@ -37,7 +40,8 @@ public class Rational {
   // Rational r = new Rational(6,12);
   // System.out.println(r.isSimplified()) // false
   public boolean isSimplified() {
-    return false; // YOUR CODE HERE
+    // YOUR CODE HERE
+    return false;
   }
 
   // Calculates the double value of our Rational
@@ -45,15 +49,18 @@ public class Rational {
   // Rational r = new Rational(3,4);
   // System.out.println(r.calculateDecimalValue()) // 0.75
   public double calculateDecimalValue() {
-    return 0.0; // YOUR CODE HERE
+    // YOUR CODE HERE
+    return 0.0;
   }
 
-  // Returns the Rational we get from raising the rational number to an integer power
+  // Returns the Rational we get from raising the rational number to an integer power.
+  // NOTE: unlike previous methods, this one returns a new Rational.
   // Example:
   // Rational r = new Rational(2,5);
   // System.out.println(r.pow(2)) // 4/25
   public Rational pow(int exponent) {
-    return null; // YOUR CODE HERE
+    // YOUR CODE HERE
+    return null;
   }
 
   // Checks to see if either the numerator or denominator match a given number
@@ -61,58 +68,10 @@ public class Rational {
   // Rational r = new Rational(3,4);
   // System.out.println(r.contains(3)) // true
   public boolean contains(int x) {
-    return false; // YOUR CODE HERE
+    // YOUR CODE HERE
+    return false;
   }
 
-  // This returns a string representation of a Rational (e.g. "1/2")
-  // This method has already been written for you
-  @Override
-  public String toString() {
-    return this.numerator + "/" + this.denominator;
-  }
-
-  // *********
-  // Here are is an example of a void method that changes the original Rational:
-  // *********
-
-  // This is a non-static version of simplify that returns a Rational
-  // Example usage:
-  // Rational r = new Rational(2, 4);
-  // Rational s = r.simplify2(); // s = 1/2
-  public Rational simplify2() {
-    int gcf = gcf(this.numerator, this.denominator);
-    int nume = this.numerator / gcf;
-    int denom = this.denominator / gcf;
-    Rational x = new Rational(nume, denom);
-    return x;
-  }
-
-  // This is a non-static version of simplify that **changes** the original Rational
-  // Note that the method is **void** because it doesn't need to return anything
-  // Example usage:
-  // Rational r = new Rational(2, 4);
-  // r.simplify3(); // r is now equal to 1/2
-  public void simplify3() {
-    int gcf = gcf(this.numerator, this.denominator);
-    this.numerator = this.numerator / gcf;
-    this.denominator = this.denominator / gcf;
-  }
-
-  // Finds the greatest common factor between a and b
-  // To find the greatest common factor,
-  public static int gcf(int a, int b) {
-    int maxNum = 1;
-    for (int i = 1; i <= a; i++) {
-      if (a % i == 0 && b % i == 0) {
-        maxNum = i;
-      }
-    }
-    return maxNum;
-  }
-
-  // *********
-  // Here are some methods that you will write later in class:
-  // *********
   // Increments the current value of our Rational (increases the value
   // of the current Rational by 1/1)
   // Example:
@@ -140,9 +99,6 @@ public class Rational {
     // YOUR CODE HERE
   }
 
-  // **********
-  // Methods you'll write for homework:
-  // **********
   // Returns whether or not the Rational is a negative number
   // Example:
   // Rational r = new Rational(-3,4);
@@ -175,5 +131,24 @@ public class Rational {
   // r.round(); // r is now 2/1
   public void round() {
     // YOUR CODE HERE
+  }
+
+  // Finds the greatest common factor between a and b
+  // To find the greatest common factor,
+  public static int gcf(int a, int b) {
+    int maxNum = 1;
+    for (int i = 1; i <= a; i++) {
+      if (a % i == 0 && b % i == 0) {
+        maxNum = i;
+      }
+    }
+    return maxNum;
+  }
+
+  // This returns a string representation of a Rational (e.g. "1/2")
+  // This method has already been written for you
+  @Override
+  public String toString() {
+    return this.numerator + "/" + this.denominator;
   }
 }

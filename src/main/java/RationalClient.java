@@ -1,17 +1,19 @@
 public class RationalClient {
 
   public static void main(String[] args) {
-    Rational r = new Rational(1, 2);
+    Rational r = new Rational(4, 8);
+    // Start with an unsimplified Rational, 4/8
     System.out.println(r);
 
-    // We can use dot notation to access the integer values
-    // of the numerator and denominator directly
-    System.out.println(r.numerator);
-    System.out.println(r.denominator);
+    r.simplify();
 
-    // Rational s = new Rational(1, 3);
-    // System.out.println(s);
-    // Rational t = Rational.add(r, s);
-    // System.out.println(t);
+    // Now our Rational has been simplified to 2/4!
+    System.out.println(r);
+
+    // Example showing the function to check if a Rational is improper
+    Rational improper = new Rational(3, 2);
+    System.out.println(improper.isImproper());
+
+    // Add more code here to test your methods as you go!
   }
 }
